@@ -9,12 +9,12 @@ class Bank_account
 public:
     void creat_account()
     {
-        cout << "Enter an count no : ";
-        cin >> account_no;
-        cout << "Enter your name : ";
-        cin >> account_holder_name;
-        cout << "Enter your Balance :";
-        cin >> balance;
+        cout<<"Enter an count no : ";
+        cin>>account_no;
+        cout<<"Enter your name : ";
+        cin>>account_holder_name;
+        cout<<"Enter your Balance :";
+        cin>>balance;
     }
     char search(long int acno)
     {
@@ -30,8 +30,8 @@ public:
     void deposite()
     {
         int money;
-        cout << "Enter Amount for Deposite :";
-        cin >> money;
+        cout<<"Enter Amount for Deposite :";
+        cin>>money;
         balance+= money;
     }
     void withdrawl()
@@ -124,4 +124,5 @@ x:
     }
     return 0;
 }
+
 
