@@ -18,7 +18,7 @@ public:
     }
     char search(long int acno)
     {
-        if (acno == account_no)
+        if (acno==account_no)
         {
             return 'v';
         }
@@ -32,100 +32,96 @@ public:
         int money;
         cout << "Enter Amount for Deposite :";
         cin >> money;
-        balance += money;
+        balance+= money;
     }
     void withdrawl()
     {
         int w;
-        cout << "Enter Amount for Withdral : ";
-        cin >> w;
-        balance -= w;
+        cout<<"Enter Amount for Withdrawl : ";
+        cin>>w;
+        balance-=w;
     }
     void check_bl()
     {
-        cout << "Your Balance is :" << balance;
+        cout<<"Your Balance is :"<<balance;
     }
 };
 int main()
 {
     Bank_account b[100];
     long int accno;
-    int t = 0, i;
+    int t=0, i;
 
-L:
-    cout << "\n1.Creat Account\n";
-    cout << "2.Deposite\n";
-    cout << "3.Withdrawl\n";
-    cout << "4.Check Balance\n";
-    cout << "5.Exit\n";
+x:
+    cout<<"\n1.Creat Account\n";
+    cout<<"2.Deposite\n";
+    cout<<"3.Withdrawl\n";
+    cout<<"4.Check Balance\n";
+    cout<<"5.Exit\n";
     int choice;
-    cout << "Enter a choice :";
-    cin >> choice;
-
+    cout<<"Enter a choice :";
+    cin>>choice;
     switch (choice)
     {
     case 1:
         b[t].creat_account();
         t++;
-        goto L;
+        goto x;
     case 2:
-        cout << "Enter an Account no :";
-        cin >> accno;
-        for (i = 0; i < t; i++)
+        cout<<"Enter an Account no :";
+        cin>>accno;
+        for(i = 0; i < t; i++)
         {
-            if (b[i].search(accno) == 'v')
+            if(b[i].search(accno) == 'v')
             {
                 b[i].deposite();
                 break;
             }
         }
-        if (i == t)
+        if(i==t)
         {
-            cout << "Account Not found !";
+            cout<<"Account Not found ";
         }
-        goto L;
-
+        goto x;
     case 3:
-        cout << "Enter an Account no :";
-        cin >> accno;
-        for (i = 0; i < t; i++)
+        cout<<"Enter an Account no :";
+        cin>>accno;
+        for(i=0;i<t;i++)
         {
-            if (b[i].search(accno) == 'v')
+            if(b[i].search(accno)=='v')
             {
                 b[i].withdrawl();
                 break;
             }
         }
-        if (i == t)
+        if(i==t)
         {
-            cout << "Account Not found !";
+            cout<<"Account Not found ";
         }
-        goto L;
-
+        goto x;
     case 4:
-        cout << "Enter an Account no :";
-        cin >> accno;
-        for (i = 0; i < t; i++)
+        cout<<"Enter an Account no :";
+        cin>>accno;
+        for(i=0;i<t;i++)
         {
-            if (b[i].search(accno) == 'v')
+            if(b[i].search(accno)=='v')
             {
                 b[i].check_bl();
                 break;
             }
         }
-        if (i == t)
+        if (i==t)
         {
-            cout << "Account Not found !\n";
+            cout<<"Account Not found \n";
         }
-        goto L;
+        goto x;
     case 5:
-        cout << "Thanks for visite\n";
+        cout<<"Thanks for visit\n";
         break;
-
     default:
-        cout << "Enter a valid choice (from 1 to 5)";
-        goto L;
+        cout<<"Enter a valid choice (from 1 to 5)";
+        goto x;
     }
-
     return 0;
 }
+
